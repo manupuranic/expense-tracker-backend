@@ -1,3 +1,4 @@
+const baseUrl = "http://44.204.76.209:3000";
 const form = document.getElementById("forgotPasswordForm");
 const msg = document.getElementById("message");
 
@@ -21,13 +22,13 @@ const submitHandler = async (e) => {
     };
     try {
       const response = await axios.post(
-        `http://localhost:3000/password/forgotpassword`,
+        `${baseUrl}password/forgotpassword`,
         userDetails
       );
       const data = response.data;
       messageHandler(data.message, "success");
       localStorage.setItem("token", data.token);
-      //   window.location.href = "../expenses/expenses.html";
+      window.location.href = "../home/expenses.html";
       email.value = "";
     } catch (err) {
       console.log(err);

@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://44.204.76.209:3000";
 
 const signUpForm = document.getElementById("signUpForm");
 const msg = document.getElementById("message");
