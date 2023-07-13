@@ -68,9 +68,10 @@ exports.postLoginUser = async (req, res, next) => {
       }
     }
   } catch (err) {
-    res.json({
+    console.log(err);
+    res.status(500).json({
       success: false,
-      message: err,
+      message: "Something went wrong",
     });
   }
 };

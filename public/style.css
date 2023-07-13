@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: #05c185;
+}
+.navbar a {
+  color: #ffffff;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  color: #f9fcff;
+}
+
+.container {
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 2px solid #05c185;
+  width: 40%;
+}
+
+input {
+  margin-bottom: 2px;
+}
+
+.heading {
+  text-align: center;
+  color: #05c185;
+}
+
+.btn {
+  margin: 10px 0;
+  background-color: #05c185;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #16d699;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .btn {
+    width: 100%;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+#message {
+  text-align: center;
+  color: white;
+}
+
+.error {
+  background-color: orangered;
+}
+
+.success {
+  background-color: #03a503;
+}
+
+.page {
+  text-decoration: none;
+  color: #05c185;
+}
+
+.page:hover {
+  color: #16d699;
+}

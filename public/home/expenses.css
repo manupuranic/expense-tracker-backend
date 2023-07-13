@@ -1,0 +1,177 @@
+.container {
+  width: 80%;
+}
+
+.form-div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+select {
+  margin-top: 7%;
+}
+
+@media (max-width: 900px) {
+  .form-div {
+    display: block;
+  }
+  select {
+    margin-top: 2%;
+  }
+}
+
+.li-btn {
+  float: right;
+  margin-left: 5px;
+}
+
+.symbol {
+  color: green;
+  font-size: 1.5rem;
+}
+
+.span-amount {
+  color: green;
+  font-size: 1.5rem;
+}
+.span-desc {
+  color: #ab27fd;
+  display: block;
+}
+.span-category {
+  display: block;
+  font-style: italic;
+}
+
+.delete {
+  background-color: #f21313;
+}
+
+.edit {
+  color: #05c185;
+  background-color: white;
+  border-color: #05c185;
+}
+
+.delete:hover {
+  background-color: #d80404;
+}
+
+.nav-btn {
+  margin-left: auto;
+}
+
+#premium-btn {
+  color: #05c185;
+  background-color: white;
+  border: 2px solid #05c185;
+}
+
+#premium-info {
+  display: none;
+  color: white;
+  margin-right: 10px;
+}
+
+#premium-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.logout {
+  background-color: #f21313;
+}
+
+.logout:hover {
+  background-color: #d80404;
+}
+
+.leaderboard {
+  display: none;
+  width: 50%;
+}
+
+#fileDownloads {
+  display: none;
+}
+
+#showLeaderboard {
+  color: #05c185;
+  background-color: white;
+  border: 2px solid #05c185;
+  display: none;
+}
+#showLeaderboard:hover {
+  background-color: black;
+  color: white;
+}
+
+.leaderboard-li {
+  display: flex;
+  justify-content: space-between;
+}
+.amount-div {
+  display: inline;
+}
+
+.download-icon {
+  font-size: 2rem;
+}
+
+.download {
+  display: none;
+  position: fixed;
+  bottom: 2%;
+  right: 4%;
+}
+
+.table-container {
+  width: 100% !important;
+  text-align: center;
+  /* height: 60% !important; */
+  overflow-x: scroll;
+}
+
+#pagination {
+  margin: 2px;
+}
+
+#pagination button {
+  margin: 10px;
+  background-color: #05c185;
+}
+
+.page-settings {
+  margin: 10px;
+  text-align: center;
+}
+
+#perPage {
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .form-div {
+    display: block;
+  }
+  select {
+    margin-top: 2px;
+  }
+  .delete {
+    width: 40%;
+  }
+
+  .logout {
+    display: block;
+  }
+
+  .leaderboard {
+    display: none;
+    width: 80%;
+  }
+
+  #pagination button {
+    width: 20%;
+  }
+}

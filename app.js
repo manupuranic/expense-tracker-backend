@@ -30,7 +30,19 @@ const accessLogStream = fs.createWriteStream(
 
 app.use(cors());
 app.use(bodyParser.json({ extended: true }));
-app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: [
+        "'self'",
+        "'unsafe-inline'",
+        "https://cdn.jsdelivr.net",
+        "https://cdnjs.cloudflare.com",
+      ],
+    },
+  })
+);
 app.use(morgan("combined", { stream: accessLogStream }));
 
 app.use("/user", userRouter);
@@ -38,6 +50,11 @@ app.use("/expenses", expenseRouter);
 app.use("/purchase", purchaseRouter);
 app.use("/premium", premiumRouter);
 app.use("/password", passwordRouter);
+
+app.use((req, res) => {
+  console.log(req.url);
+  res.sendFile(path.join(__dirname, "public", `${req.url}`));
+});
 
 User.hasMany(Expense);
 Expense.belongsTo(User);
