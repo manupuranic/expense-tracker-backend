@@ -30,25 +30,25 @@ const accessLogStream = fs.createWriteStream(
 
 app.use(cors());
 app.use(bodyParser.json({ extended: true }));
-var scriptSources = [
-  "'self'",
-  "'unsafe-inline'",
-  "'unsafe-eval'",
-  "https://cdn.jsdelivr.net",
-  "https://cdnjs.cloudflare.com",
-];
-var styleSources = ["'self'", "'unsafe-inline'", "ajax.googleapis.com"];
-var connectSources = ["'self'"];
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: scriptSources,
-      connectSrc: connectSources,
-      "form-action": ["'self'"],
-    },
-  })
-);
+// var scriptSources = [
+//   "'self'",
+//   "'unsafe-inline'",
+//   "'unsafe-eval'",
+//   "https://cdn.jsdelivr.net",
+//   "https://cdnjs.cloudflare.com",
+// ];
+// var styleSources = ["'self'", "'unsafe-inline'", "ajax.googleapis.com"];
+// var connectSources = ["'self'"];
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       scriptSrc: scriptSources,
+//       connectSrc: connectSources,
+//       "form-action": ["'self'"],
+//     },
+//   })
+// );
 app.use(morgan("combined", { stream: accessLogStream }));
 
 app.use("/user", userRouter);
