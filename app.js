@@ -43,7 +43,6 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      styleSrc: styleSources,
       scriptSrc: scriptSources,
       connectSrc: connectSources,
       "form-action": ["'self'"],
