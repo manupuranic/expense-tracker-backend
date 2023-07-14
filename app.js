@@ -35,6 +35,7 @@ var scriptSources = [
   "'unsafe-inline'",
   "https://cdn.jsdelivr.net",
   "https://cdnjs.cloudflare.com",
+  "https://checkout.razorpay.com",
 ];
 app.use(
   helmet.contentSecurityPolicy({

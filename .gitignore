@@ -2,3 +2,4 @@ node_modules
 razorpay
 .env
 nodemon.json
+access.log
