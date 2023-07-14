@@ -30,20 +30,20 @@ const accessLogStream = fs.createWriteStream(
 
 app.use(cors());
 app.use(bodyParser.json({ extended: true }));
-// var scriptSources = [
-//   "'self'",
-//   "'unsafe-inline'",
-//   "https://cdn.jsdelivr.net",
-//   "https://cdnjs.cloudflare.com",
-// ];
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       scriptSrc: scriptSources,
-//     },
-//   })
-// );
+var scriptSources = [
+  "'self'",
+  "'unsafe-inline'",
+  "https://cdn.jsdelivr.net",
+  "https://cdnjs.cloudflare.com",
+];
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: scriptSources,
+    },
+  })
+);
 app.use(morgan("combined", { stream: accessLogStream }));
 
 app.use("/user", userRouter);
