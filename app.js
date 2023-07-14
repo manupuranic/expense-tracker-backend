@@ -54,7 +54,7 @@ app.use("/password", passwordRouter);
 
 app.use((req, res) => {
   console.log(req.url);
-  res.sendFile(path.join(__dirname, "public", `${req.url}`));
+  res.sendFile(path.join(__dirname, `public/${req.url}`));
 });
 
 User.hasMany(Expense);
