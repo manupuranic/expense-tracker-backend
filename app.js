@@ -43,13 +43,10 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: scriptSources,
       styleSrc: styleSources,
+      scriptSrc: scriptSources,
       connectSrc: connectSources,
       "form-action": ["'self'"],
-      reportOnly: false,
-      setAllHeaders: false,
-      safari5: false,
     },
   })
 );
