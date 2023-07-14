@@ -31,16 +31,16 @@ app.use("/premium", premiumRouter);
 app.use("/password", passwordRouter);
 
 app.use((req, res) => {
-  const incomingUrl = req.url;
-  const actualUrl = incomingUrl.split("+");
-  let sendUrl;
-  if (actualUrl.length === 1) {
-    sendUrl = req.url;
-  } else {
-    sendUrl = actualUrl[1];
-  }
-  console.log("sendUrl", sendUrl);
-  res.sendFile(path.join(__dirname, `public/${sendUrl}`));
+  // const incomingUrl = req.url;
+  // const actualUrl = incomingUrl.split("+");
+  // let sendUrl;
+  // if (actualUrl.length === 1) {
+  //   sendUrl = req.url;
+  // } else {
+  //   sendUrl = actualUrl[1];
+  // }
+  console.log("sendUrl", req.url);
+  res.sendFile(path.join(__dirname, `public/${req.url}`));
 });
 
 User.hasMany(Expense);
