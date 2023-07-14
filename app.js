@@ -21,11 +21,6 @@ const FileDownloads = require("./models/fileDownloads");
 
 const app = express();
 
-const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, "access.log"),
-  { flags: "a" }
-);
-
 app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 
@@ -36,8 +31,16 @@ app.use("/premium", premiumRouter);
 app.use("/password", passwordRouter);
 
 app.use((req, res) => {
-  console.log(req.url);
-  res.sendFile(path.join(__dirname, `public/${req.url}`));
+  const incomingUrl = req.url;
+  const actualUrl = incomingUrl.split("+");
+  let sendUrl;
+  if (actualUrl.length === 1) {
+    sendUrl = req.url;
+  } else {
+    sendUrl = actualUrl[1];
+  }
+  console.log("sendUrl", sendUrl);
+  res.sendFile(path.join(__dirname, `public/${sendUrl}`));
 });
 
 User.hasMany(Expense);

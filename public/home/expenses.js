@@ -20,13 +20,13 @@ const token = localStorage.getItem("token");
 const perPage = localStorage.getItem("perPage");
 
 if (!token) {
-  window.location.href = "../login/login.html";
+  window.location.href = "+./login/login.html";
 }
 
 logout.addEventListener("click", () => {
   localStorage.removeItem("token");
   localStorage.removeItem("perPage");
-  window.location.href = "../login/login.html";
+  window.location.href = "+./login/login.html";
 });
 
 document.getElementById("premium-btn").addEventListener("click", async (e) => {

@@ -28,7 +28,7 @@ const submitHandler = async (e) => {
       const data = response.data;
       messageHandler(data.message, "success");
       localStorage.setItem("token", data.token);
-      window.location.href = "../home/expenses.html";
+      window.location.href = "+./home/expenses.html";
       email.value = "";
     } catch (err) {
       console.log(err);

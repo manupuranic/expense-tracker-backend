@@ -30,7 +30,7 @@ const loginHandler = async (e) => {
       console.log(data);
       localStorage.setItem("token", data.token);
       localStorage.setItem("perPage", 5);
-      window.location.href = "../home/expenses.html";
+      window.location.href = "+./home/expenses.html";
       email.value = "";
       password.value = "";
     } catch (err) {
