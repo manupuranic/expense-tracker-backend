@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://3.86.101.165:3000";
 
 const loginForm = document.getElementById("loginForm");
 const msg = document.getElementById("message");
@@ -30,7 +30,7 @@ const loginHandler = async (e) => {
       console.log(data);
       localStorage.setItem("token", data.token);
       localStorage.setItem("perPage", 5);
-      window.location.href = "+./home/expenses.html";
+      window.location.href = "../home/expenses.html";
       email.value = "";
       password.value = "";
     } catch (err) {

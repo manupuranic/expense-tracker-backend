@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://3.86.101.165:3000";
 const form = document.getElementById("forgotPasswordForm");
 const msg = document.getElementById("message");
 
@@ -28,7 +28,7 @@ const submitHandler = async (e) => {
       const data = response.data;
       messageHandler(data.message, "success");
       localStorage.setItem("token", data.token);
-      window.location.href = "+./home/expenses.html";
+      window.location.href = "../home/expenses.html";
       email.value = "";
     } catch (err) {
       console.log(err);

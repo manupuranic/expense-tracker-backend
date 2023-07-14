@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://3.86.101.165:3000";
 
 const signUpForm = document.getElementById("signUpForm");
 const msg = document.getElementById("message");
@@ -34,7 +34,7 @@ const signUpHandler = async (event) => {
       } else {
         console.log(user);
         messageHandler("Signup successfull", "success");
-        window.location.href = "+./login/login.html";
+        window.location.href = "../login/login.html";
         userName.value = "";
         email.value = "";
         password.value = "";

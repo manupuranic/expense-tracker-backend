@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://3.86.101.165:3000";
 
 const msg = document.getElementById("message");
 const form = document.getElementById("addExpense");
