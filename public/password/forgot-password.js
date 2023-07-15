@@ -22,7 +22,7 @@ const submitHandler = async (e) => {
     };
     try {
       const response = await axios.post(
-        `${baseUrl}password/forgotpassword`,
+        `${baseUrl}/password/forgotpassword`,
         userDetails
       );
       const data = response.data;
