@@ -25,7 +25,7 @@ exports.postForgotPassword = async (req, res, next) => {
     },
   ];
   try {
-    const resetUrl = `http://localhost:3000/password/resetpassword/${requestId}`;
+    const resetUrl = `http://3.86.101.165//password/resetpassword/${requestId}`;
 
     const user = await User.findAll({ where: { email: email } });
     if (user.length) {
